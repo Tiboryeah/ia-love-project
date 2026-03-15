@@ -2,14 +2,14 @@
 
 Este es el código fuente del proyecto **IA Love**, una plataforma de novias virtuales impulsada por Inteligencia Artificial, que incluye la generación de imágenes en tiempo real mediante *Stable Diffusion* (SD.Next) y la opción de entrenar *LoRAs* personalizados.
 
-## 🚀 Requisitos Previos (Para tu amigo)
+##  Requisitos Previos 
 
 Para que el proyecto funcione en otra computadora, especialmente la generación de imágenes, necesitas lo siguiente:
 
 1.  **Node.js:** Versión 18 o superior (para correr la página web en Next.js).
 2.  **Python 3.10 o 3.11:** Requerido para instalar y ejecutar SD.Next.
 3.  **Git:** Para descargar repositorios.
-4.  *(Opcional pero muy recomendado)* Una tarjeta de video dedicada (Nvidia RTX o AMD moderna). Aunque el proyecto está configurado actualmente para correr en procesador (CPU), es extremadamente lento (10-15 min por foto) en comparación a usar una tarjeta de video (10-20 segundos).
+4.  *(Opcional pero muy recomendado)* Una tarjeta de video dedicada (Nvidia RTX o AMD moderna). Aunque el proyecto está configurado actualmente para correr en procesador (CPU), es extremadamente lento (1-1.5 min por foto) en comparación a usar una tarjeta de video (10-20 segundos).
 
 ---
 
@@ -47,7 +47,7 @@ npm install
 
 ---
 
-## 🎮 Cómo Arrancar el Proyecto
+##  Cómo Arrancar el Proyecto
 
 Para usar la aplicación, necesitas arrancar ambos servidores a la vez.
 
@@ -72,7 +72,7 @@ Abre tu navegador en `http://localhost:3000`. ¡Listo! Al chatear y pedir fotos,
 
 ---
 
-## 📁 Estructura del Proyecto (Scripts Importantes)
+##  Estructura del Proyecto (Scripts Importantes)
 
 Para pruebas directas de generación (sin usar la web), tienes estos scripts listos:
 
