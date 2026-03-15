@@ -1,0 +1,7 @@
+usage:  [-h] [--config CONFIG] [--ui-config UI_CONFIG] [--freeze] [--medvram] [--lowvram] [--disable DISABLE] [--quick] [--reset] [--upgrade] [--requirements] [--reinstall] [--uv] [--optional]
+        [--skip-requirements] [--skip-extensions] [--skip-git] [--skip-torch] [--skip-all] [--skip-env] [--device-id DEVICE_ID] [--use-cuda] [--use-ipex] [--use-rocm] [--use-zluda] [--use-openvino]
+        [--use-directml] [--use-xformers] [--use-nightly] [--ckpt CKPT] [--data-dir DATA_DIR] [--models-dir MODELS_DIR] [--extensions-dir EXTENSIONS_DIR] [--theme THEME] [--locale LOCALE]
+        [--server-name SERVER_NAME] [--tls-keyfile TLS_KEYFILE] [--tls-certfile TLS_CERTFILE] [--tls-selfsign] [--cors-origins CORS_ORIGINS] [--cors-regex CORS_REGEX] [--subpath SUBPATH]
+        [--autolaunch] [--auth AUTH] [--auth-file AUTH_FILE] [--allowed-paths ALLOWED_PATHS [ALLOWED_PATHS ...]] [--share] [--insecure] [--listen] [--remote] [--port PORT] [--experimental] [--ignore]
+        [--new] [--safe] [--test] [--version] [--monitor MONITOR] [--status STATUS] [--log LOG] [--debug] [--trace] [--profile] [--docs] [--api-log]
+: error: unrecognized arguments: --opt-sub-quad-attention --no-half-vae --disable-nan-check
