@@ -43,13 +43,17 @@ for idx, (name, prompt_template) in enumerate(nsfw_prompts):
     print(f"Generating {idx+1}/12: {name}...")
     
     payload = {
-        "prompt": full_prompt + ", masterpiece, high quality, RAW photo",
+        "prompt": full_prompt + ", masterpiece, high quality, RAW photo, extremely detailed, best quality",
         "negative_prompt": character["negative"],
-        "steps": 25,
-        "cfg_scale": 7.0,
+        "steps": 40,
+        "cfg_scale": 7.5,
         "width": 512,
-        "height": 512,
-        "sampler_name": "Euler a",
+        "height": 768,
+        "enable_hr": True,
+        "hr_scale": 1.5,
+        "hr_upscaler": "R-ESRGAN 4x+",
+        "denoising_strength": 0.55,
+        "sampler_name": "DPM++ 2M Karras",
         "seed": 400 + idx, 
         "send_images": True,
     }

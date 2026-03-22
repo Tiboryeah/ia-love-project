@@ -39,6 +39,11 @@ const CHARACTER_PROFILES: Record<string, {
         identity: "stunningly beautiful young asian woman, flawless beautifully smooth skin, cute aesthetic, pink hair, big captivating eyes, youthful features",
         negativeExtras: "blonde, western features, mature, old,"
     },
+    "lilith-goth": {
+        seed: 1000,
+        identity: "stunningly beautiful and cute 18 year old youthful gothic girl, babyface, soft facial features, perfect glowing skin, seductive eyes, black lipstick, (extremely large massive symmetrical breasts:1.3), short waist, hourglass figure, wide hips, thick thicc thighs, large round ass",
+        negativeExtras: "mature, old, wrinkles, heavy cakey makeup, (aged face:1.2), sagging,"
+    },
 };
 
 // Style descriptors per situation
@@ -95,6 +100,17 @@ export async function POST(req: Request) {
             seed: seed,
             send_images: true,
             save_images: true,
+            alwayson_scripts: {
+                "ADetailer": {
+                    "args": [
+                        {
+                            "ad_model": "face_yolov8n.pt",
+                            "ad_prompt": "stunningly beautiful cute youthful face, perfect skin, detailed eyes, gorgeous",
+                            "ad_denoising_strength": 0.4
+                        }
+                    ]
+                }
+            }
         };
 
         console.log(`[Image API] char=${characterName} style=${style} seed=${seed}`);

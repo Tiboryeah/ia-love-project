@@ -45,11 +45,15 @@ for idx, (name, prompt_template) in enumerate(nsfw_prompts):
     payload = {
         "prompt": full_prompt + ", masterpiece, best quality, highly detailed, ultra-realistic, 8k resolution, raw photo, film grain",
         "negative_prompt": character["negative"],
-        "steps": 35,
-        "cfg_scale": 7.0,
+        "steps": 40,
+        "cfg_scale": 7.5,
         "width": 512,
-        "height": 512, # Imagenes verticales
-        "sampler_name": "Euler a", # Mejor compatibilidad con DML en AMD
+        "height": 768, # Imagenes verticales
+        "enable_hr": True,
+        "hr_scale": 1.5,
+        "hr_upscaler": "R-ESRGAN 4x+",
+        "denoising_strength": 0.55,
+        "sampler_name": "DPM++ 2M Karras",
         "seed": 600 + idx, 
         "send_images": True
     }

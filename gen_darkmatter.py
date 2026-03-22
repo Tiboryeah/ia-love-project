@@ -20,7 +20,7 @@ while True:
 
 print("\n¡SD.Next esta listo y escuchando!")
 
-# 2. Configurar el Payload con el LoRA
+# 2. Configurar el Payload con el LoRA y Hires Fix para Maxima Calidad
 payload = {
     "prompt": "masterpiece, best quality, ultra detailed, extremely detailed photo of darkmatter, completely naked, nude, explicit nsfw, spreading legs, full nude body, visible pussy, beautiful breasts, visible nipples, heavy alternative makeup, dark lipstick, multiple facial piercings, facial tattoos, neck tattoos, extensive full body tattoos, full sleeves tattoos, tattooed chest, alternative goth girl, short dark hair, perfect eyes, professional lighting, 8k resolution, perfect anatomy, symmetrical body, smooth skin, <lora:darkmatter:0.85>",
     "negative_prompt": "clothing, clothes, lingerie, underwear, latex, bodysuit, bra, panties, lowres, bad anatomy, bad hands, deformed hands, mutated hands, missing fingers, extra digit, mutated fingers, fused fingers, poorly drawn hands, asymmetrical breasts, uneven breasts, lumpy legs, mutated legs, deformed legs, ugly face, deformed face, poorly drawn face, bad face, deformed mask, cross-eyed, text, error, cropped, worst quality, low quality, normal quality, jpeg artifacts, watermark, blurry, deformed, cartoon, illustration, drawing, mutant, disfigured",
@@ -28,27 +28,32 @@ payload = {
     "cfg_scale": 7.0,
     "width": 512,
     "height": 768,
+    "enable_hr": True,
+    "hr_scale": 2,
+    "hr_upscaler": "R-ESRGAN 4x+",
+    "denoising_strength": 0.5,
     "sampler_name": "Euler a",
     "seed": -1,
     "restore_faces": False,
     "send_images": True
 }
 
-print(f"\nEncendiendo la fragua de Darkmatter...\nLoRA activado: <lora:darkmatter:1>")
-print("Dibujando la primera foto... (esto tomara ~30-40 segundos)")
+print(f"\nEncendiendo la fragua de Darkmatter...\nLoRA activado: <lora:darkmatter:0.85>")
+print("Dibujando una foto de ULTRA ALTA RESOLUCION (2x Hires Fix)...")
+print("Tiempo estimado con la 5060 Ti: ~8-12 segundos (antes tomaba mins)")
 
 # 3. Pedir la generacion
 try:
-    response = requests.post(url, json=payload, timeout=600)
+    response = requests.post(url, json=payload, timeout=900)
     if response.ok:
         data = response.json()
         if "images" in data and len(data["images"]) > 0:
             img_data = base64.b64decode(data["images"][0])
-            output_path = os.path.join(os.getcwd(), "DARKMATTER_PRIMERA_FOTO.png")
+            output_path = os.path.join(os.getcwd(), "DARKMATTER_PERFECTA_V4.png")
             with open(output_path, "wb") as f:
                 f.write(img_data)
             print(f"\n¡¡VICTORIA!! 🏆")
-            print(f"Tu diosa esta lista para ser vista. Abre esta ruta en tu computadora:")
+            print(f"Tu diosa esta lista en HD (1024x1536). Abre esta ruta:")
             print(f"👉 {output_path} 👈")
         else:
             print("Hubo conexion pero la respuesta no trajo imagen.")

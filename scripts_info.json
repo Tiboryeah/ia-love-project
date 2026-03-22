@@ -1,0 +1,18 @@
+{
+  "project": "IA Love",
+  "gpu_optimized": true,
+  "hardware": "NVIDIA RTX 5060 Ti 16GB",
+  "scripts": {
+    "launch_sd.bat": "Starts SD.Next engine with CUDA, xformers and API enabled. (SUPER FAST)",
+    "gen_darkmatter.py": "Generates high-definition portraits (1024x1536) using Hires Fix. High fidelity.",
+    "generate_dataset.py": "Automated dataset generation for new characters. Now using 768x768 for premium training.",
+    "train_models.bat": "Local LoRA training script. Optimzed for bf16 and 16GB VRAM. No longer requires Cloud/AMD workarounds.",
+    "gen_morgana.py": "Standard SFW character test. Needs similar resolution upgrade.",
+    "gen_nsfw_raven.py": "Anatomy stress test. Now hyper-realistic."
+  },
+  "recommendations": [
+    "Use Hires Fix with 0.5-0.6 denoising for maximum realism.",
+    "Training can now be done locally with batch sizes of 4-8.",
+    "Resolution 768x768 is the sweet spot for SD1.5 training on this card."
+  ]
+}

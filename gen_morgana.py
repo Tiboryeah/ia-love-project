@@ -46,13 +46,13 @@ for idx, (name, prompt_template) in enumerate(prompts):
     print(f"Generating {idx+1}/15: {name}...")
     
     payload = {
-        "prompt": full_prompt + ", masterpiece, high quality",
+        "prompt": full_prompt + ", masterpiece, high quality, extremely detailed",
         "negative_prompt": character["negative"],
-        "steps": 25,
-        "cfg_scale": 7.0,
-        "width": 512,
-        "height": 512,
-        "sampler_name": "Euler a",
+        "steps": 30,
+        "cfg_scale": 7.5,
+        "width": 768,
+        "height": 768,
+        "sampler_name": "DPM++ 2M Karras",
         "seed": 300 + idx, 
         "send_images": True,
     }
